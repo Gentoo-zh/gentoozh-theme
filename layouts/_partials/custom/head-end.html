@@ -17,10 +17,14 @@
 {{- range .AllTranslations -}}{{- if eq .Language.Lang "zh-cn" -}}
 <link rel="alternate" hreflang="x-default" href="{{ .Permalink }}" />
 {{- end -}}{{- end -}}
-{{- $ogLocale := cond (eq .Site.Language.Lang "zh-tw") "zh_TW" "zh_CN" -}}
+{{- $ogLocale := cond (eq .Site.Language.Lang "zh-tw") "zh_TW" (cond (eq .Site.Language.Lang "en") "en_US" "zh_CN") -}}
 <meta property="og:site_name" content="{{ .Site.Title }}" />
 <meta property="og:locale" content="{{ $ogLocale }}" />
-<meta property="og:locale:alternate" content="{{ cond (eq .Site.Language.Lang "zh-tw") "zh_CN" "zh_TW" }}" />
+{{- range (slice "zh_CN" "zh_TW" "en_US") -}}
+{{- if ne . $ogLocale }}
+<meta property="og:locale:alternate" content="{{ . }}" />
+{{- end -}}
+{{- end -}}
 {{- if .IsHome -}}
 <script type="application/ld+json">{{ dict "@context" "https://schema.org" "@type" "WebSite" "name" .Site.Title "url" .Site.Home.Permalink "inLanguage" $ogLocale "description" .Site.Params.description | jsonify | safeJS }}</script>
 <script type="application/ld+json">{{ dict "@context" "https://schema.org" "@type" "Organization" "name" .Site.Title "url" .Site.Home.Permalink "logo" (absURL "img/og-cover.png") "sameAs" (slice "https://github.com/Gentoo-zh" "https://t.me/gentoocn") | jsonify | safeJS }}</script>

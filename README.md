@@ -14,7 +14,7 @@
 - **定制 404、footer、navbar 标题** —— `layouts/404.html`、`layouts/_partials/{footer,navbar-title}.html`
 - **文章/列表卡片** —— `layouts/_default/list.html`、`layouts/blog/list.html`
 - **Gentoo 品牌紫等站点样式** —— `assets/css/custom.css`（叠在 Hextra 编译产物之上）
-- **简繁 UI 字串覆盖** —— `i18n/zh-cn.yaml`、`i18n/zh-tw.yaml`
+- **三语 UI 字串** —— 自定义键在 `i18n/{zh-cn,zh-tw,en}.toml`(简 / 繁 / 英各一套);覆盖 Hextra 核心键在 `i18n/{zh-cn,zh-tw}.yaml`(英文核心键走 Hextra 自带)。站点 UI 已支持简 / 繁 / 英三语。
 
 > 站点**内容**（`content/`，含 sync 生成的繁体）、配置（菜单/语言/params）、`sync_to_tw.sh`、贡献者抓取脚本等都留在站点仓库——那些不是「皮」。
 
