@@ -24,6 +24,15 @@ other = "下载"
 [bento_download_sub]
 other = "Live ISO · Stage3 · 安装介质"
 
+[bento_bug]
+other = "Bug & 新闻"
+
+[bento_bug_sub]
+other = "Bugzilla 新 bug · 官方新闻"
+
+[bento_bug_link]
+other = "https://t.me/GentoozhBug"
+
 [bento_get_involved]
 other = "我也要参与"
 

@@ -24,6 +24,15 @@ other = "Download"
 [bento_download_sub]
 other = "Live ISO · Stage3 · install media"
 
+[bento_bug]
+other = "Bug & news"
+
+[bento_bug_sub]
+other = "New Bugzilla bugs · official news"
+
+[bento_bug_link]
+other = "https://t.me/GentooBug"
+
 [bento_get_involved]
 other = "Get involved"
 
