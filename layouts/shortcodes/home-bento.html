@@ -33,7 +33,7 @@
   <section class="bento-tile bento-hero">
     {{- with $badge }}<a class="bento-badge" href="{{ $badgeLink }}"{{ if hasPrefix $badgeLink "http" }} target="_blank" rel="noreferrer"{{ end }}>{{ . }}</a>{{ end }}
     <h1 class="bento-title">{{ $title }}</h1>
-    <p class="bento-subtitle">{{ $subtitle }}</p>
+    <p class="bento-subtitle">{{ $subtitle | safeHTML }}</p>
     <div class="bento-cta-row">
       {{- with $cta }}{{ $h := cond (hasPrefix $ctaLink "http") $ctaLink (relLangURL (strings.TrimPrefix "/" $ctaLink)) }}<a class="bento-cta" href="{{ $h }}"{{ if hasPrefix $ctaLink "http" }} target="_blank" rel="noreferrer"{{ end }}>{{ . }}</a>{{ end }}
       {{- with $cta2 }}{{ $h := cond (hasPrefix $cta2Link "http") $cta2Link (relLangURL (strings.TrimPrefix "/" $cta2Link)) }}<a class="bento-cta-2" href="{{ $h }}"{{ if hasPrefix $cta2Link "http" }} target="_blank" rel="noreferrer"{{ end }}>{{ . }}</a>{{ end }}
